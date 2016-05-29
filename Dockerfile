@@ -2,10 +2,12 @@ FROM java:8
 #WORKDIR dat100-testassignment/src/hib/dat100/testassignment
 #RUN javac dat100-testassignment/src/hib/dat100/testassignment/A.java 
 
-COPY . /usr/src/test  #Must have it in order to build successfully
-WORKDIR /usr/src/test #Must have it in order to build successfully
+#Must have COPY and WORKDIR in order to build successfully
+#The main purpose of a CMD is to provide defaults for an executing container.
+COPY . /usr/src/test 
+WORKDIR /usr/src/test 
 RUN javac dat100-testassignment/src/hib/dat100/testassignment/A.java
-CMD ["java","A"]      #The main purpose of a CMD is to provide defaults for an executing container.
+CMD ["java","A"]     
 
 #FROM:
 #The FROM instruction sets the Base Image for subsequent instructions. 
