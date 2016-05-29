@@ -2,10 +2,10 @@ FROM java:8
 #WORKDIR dat100-testassignment/src/hib/dat100/testassignment
 #RUN javac dat100-testassignment/src/hib/dat100/testassignment/A.java 
 
-COPY . /usr/src/test #Must have it in order to build successfully
-WORKDIR /usr/src/test ##Must have it in order to build successfully
+COPY . /usr/src/test  #Must have it in order to build successfully
+WORKDIR /usr/src/test #Must have it in order to build successfully
 RUN javac dat100-testassignment/src/hib/dat100/testassignment/A.java
-CMD ["java","A"] #The main purpose of a CMD is to provide defaults for an executing container.
+CMD ["java","A"]      #The main purpose of a CMD is to provide defaults for an executing container.
 
 #FROM:
 #The FROM instruction sets the Base Image for subsequent instructions. 
@@ -33,8 +33,7 @@ CMD ["java","A"] #The main purpose of a CMD is to provide defaults for an execut
 #WORKDIR /path/to/workdir
 #More detials from Reference: https://docs.docker.com/engine/reference/builder/#workdir
 
-"""
-NOTE:
-Don’t confuse RUN with CMD. RUN actually runs a command and commits the result; 
-CMD does not execute anything at build time, but specifies the intended command for the image.
-"""
+#NOTE:
+#Don’t confuse RUN with CMD. RUN actually runs a command and commits the result; 
+#CMD does not execute anything at build time, but specifies the intended command for the image.
+
