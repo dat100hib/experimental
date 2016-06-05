@@ -8,7 +8,8 @@ COPY . /usr/src/test
 WORKDIR /usr/src/test 
 #RUN javac dat100-testassignment/src/hib/dat100/testassignment/A.java
 RUN javac -cp .:junit/junit-4.12.jar:junit/hamcrest-core-1.3.jar dat100-testassignment/src/hib/dat100/testassignment/*.java
-CMD ["java","-cp", ".:junit/junit-4.12.jar:junit/hamcrest-core-1.3.jar:dat100-testassignment/src", "org.junit.runner.JUnitCore", "hib.dat100.testassignment.TestA"]     
+#CMD ["java","-cp", ".:junit/junit-4.12.jar:junit/hamcrest-core-1.3.jar:dat100-testassignment/src", "org.junit.runner.JUnitCore", "hib.dat100.testassignment.TestA"]     
+CMD ["java","-cp", ".:junit/junit-4.12.jar:junit/hamcrest-core-1.3.jar:dat100-testassignment/src", "hib.dat100.testassignment.TestRunner"]
 
 #FROM:
 #The FROM instruction sets the Base Image for subsequent instructions. 
