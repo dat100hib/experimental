@@ -6,8 +6,9 @@ FROM java:8
 #The main purpose of a CMD is to provide defaults for an executing container.
 COPY . /usr/src/test 
 WORKDIR /usr/src/test 
-RUN javac dat100-testassignment/src/hib/dat100/testassignment/A.java
-CMD ["java","A"]     
+#RUN javac dat100-testassignment/src/hib/dat100/testassignment/A.java
+RUN javac -cp .:junit/junit-4.12.jar:junit/hamcrest-core-1.3.jar dat100-testassignment/src/hib/dat100/testassignment/*.java
+CMD ["java","-cp",".:junit/junit-4.12.jar:junit/hamcrest-core-1.3.jar:dat100-testassignment/src/hib/dat100/testassignment","org.junit.runner.JUnitCore","TestA"]     
 
 #FROM:
 #The FROM instruction sets the Base Image for subsequent instructions. 
